@@ -1,0 +1,10 @@
+server:
+  port: 8081
+spring:
+  data:
+    mongodb:
+      host: 127.0.0.1
+      port: 27017
+      username: blog
+      password: ${db-password}
+      authentication-database: blog
