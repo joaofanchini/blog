@@ -5,6 +5,8 @@
 <html>
 <head>
     <title>Blog</title>
+    <link rel="stylesheet" type="text/css" href="/styles/reset.css">
+    <link rel="stylesheet" type="text/css" href="styles/global.css">
 </head>
 <body>
 <menu:menu/>

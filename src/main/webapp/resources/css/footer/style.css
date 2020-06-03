@@ -1,3 +1,37 @@
-footer{
+.footer {
     background: red;
+    display: flex;
+    width: 100vw;
+    min-height: 10vw;
+    position: absolute;
+    bottom: 0;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.footer__logo{
+    position: relative;
+    margin-top: 2vh;
+}
+
+.footer__list h2 {
+    font-size: 1.2rem;
+    position: relative;
+    margin-top: 2vh;
+}
+
+.footer__item {
+    position: relative;
+    margin: 1vh;
+}
+
+.footer__item a {
+    color: black;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+.footer__item a:hover{
+    font-weight: 300;
+    color: white;
 }
