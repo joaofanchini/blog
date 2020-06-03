@@ -1,0 +1,24 @@
+.menu{
+    background: grey;
+}
+
+.menu ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin: 0 2vw;
+}
+
+.menu__item{
+    border-right: 3px solid black;
+    padding: 2vh 2vw;
+}
+
+.menu__item:last-child{
+    border-right: 0px
+}
+
+.menu__item a{
+    color: black;
+    font-weight: bold;
+}
