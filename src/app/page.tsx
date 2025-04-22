@@ -1,24 +1,12 @@
-import articleExample from "@images/article-example.svg";
 import Tag from "@/components/Tag";
 import ArticleCard from "@/components/ArticleCard";
-
-function cutWords(content: string) {
-  const palavras = content.trim().split(/\s+/); // separa pelas palavras, ignora múltiplos espaços
-  const primeiras20 = palavras.slice(0, 20);
-  return primeiras20.join(" ");
-}
-
-async function getArticles(): Promise<any[]> {
-  const response = await fetch(`https://jsonplaceholder.org/posts/`);
-
-  return response.json();
-}
+import { getAllArticles } from "@/functions/articleUtils";
 
 export default async function Home() {
-  const articles = await getArticles();
+  const articles = getAllArticles();
   return (
     <>
-      <section className="mb-12">
+      {/* <section className="mb-12">
         <h2 className="text-xl font-semibold mb-2 text-sky-400">
           Últimas tags com conteúdo novo
         </h2>
@@ -27,19 +15,18 @@ export default async function Home() {
           <Tag label="css" />
           <Tag label="java" />
         </div>
-      </section>
+      </section> */}
 
-      <main className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {articles.map((a) => {
+      <main className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {articles.map((article) => {
           return (
             <ArticleCard
-              key={a.id}
-              articleId={a.id}
-              title={a.title}
-              imageSrc={a.image}
-              imageAlt={a.title}
-              description={cutWords(a.content)}
-              tags={["java"]}
+              key={article.slug}
+              articleId={article.slug}
+              title={article.data.title}
+              imageSrc={article.data.imageSrc}
+              imageAlt={article.data.imageAlt}
+              description={article.data.preview}
             />
           );
         })}
