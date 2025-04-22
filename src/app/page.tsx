@@ -1,4 +1,3 @@
-import Tag from "@/components/Tag";
 import ArticleCard from "@/components/ArticleCard";
 import { getAllArticles } from "@/functions/articleUtils";
 

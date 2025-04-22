@@ -4,7 +4,6 @@ import { useState } from "react";
 
 export default function BurgerButton() {
   const [isOpen, setIsOpen] = useState(false);
-  [];
   return (
     <div onClick={() => setIsOpen(!isOpen)} className="flex flex-col gap-1">
       <span

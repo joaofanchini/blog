@@ -10,7 +10,7 @@ export interface ArticleFile {
   filename: string;
   show: boolean;
   formattedContent: string;
-  data: { [key: string]: any };
+  data: { [key: string]: unknown };
 }
 
 export function getAllArticles(): ArticleFile[] {
@@ -35,7 +35,6 @@ export function getAllArticles(): ArticleFile[] {
 
 export function getArticleBySlug(slug: string): ArticleFile {
   const article = getAllArticles().find((article) => article.slug === slug);
-  console.log(article);
   if (!article) {
     throw new Error("Article not found");
   }

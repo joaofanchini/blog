@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 import Tag from "./Tag";
 import Link from "next/link";
 import ImageWrapper from "./ImageWrapper";
