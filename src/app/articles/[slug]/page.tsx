@@ -25,11 +25,11 @@ export default async function PageArticle({ params }: ArticleParamsWrapper) {
   const article = getArticle(slug);
   return (
     <div className="flex flex-col mx-auto gap-6">
-      <h1 className="text-3xl font-bold leading-tight">{article.data.title}</h1>
+      <h1 className="text-3xl font-bold leading-tight">{article.title}</h1>
       <div className="relative w-full">
         <Image
-          src={article.data.imageSrc}
-          alt={article.data.imageAlt}
+          src={article.imageSrc}
+          alt={article.imageAlt}
           layout="responsive"
           width={0}
           height={0}

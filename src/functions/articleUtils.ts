@@ -9,6 +9,10 @@ export interface ArticleFile {
   slug: string;
   filename: string;
   show: boolean;
+  title: string;
+  imageSrc: string;
+  imageAlt: string;
+  preview: string;
   formattedContent: string;
   data: { [key: string]: unknown };
 }
@@ -26,6 +30,10 @@ export function getAllArticles(): ArticleFile[] {
         slug,
         filename,
         show: data.show,
+        title: data.title,
+        imageSrc: data.imageSrc,
+        imageAlt: data.imageAlt,
+        preview: data.preview,
         formattedContent: md.render(content),
         data,
       };

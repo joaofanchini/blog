@@ -22,10 +22,10 @@ export default async function Home() {
             <ArticleCard
               key={article.slug}
               articleId={article.slug}
-              title={article.data.title}
-              imageSrc={article.data.imageSrc}
-              imageAlt={article.data.imageAlt}
-              description={article.data.preview}
+              title={article.title}
+              imageSrc={article.imageSrc}
+              imageAlt={article.imageAlt}
+              description={article.preview}
             />
           );
         })}
