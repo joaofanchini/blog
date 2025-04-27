@@ -1,12 +1,24 @@
 import type { Metadata } from "next";
 import type { Viewport } from "next";
+
+import OpDefaultImage from "@images/OPDefaultImage.png";
+import "./globals.css";
 import { Header } from "@/components/Header";
 import Footer from "@/components/Footer";
-import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Echoes of Journey",
   description: "A Blog about IT, Software Development, and Life",
+  openGraph: {
+    title: "Echoes of Journey",
+    description: "A Blog about IT, Software Development, and Life",
+    images: [
+      {
+        url: OpDefaultImage.src,
+        alt: "Blog default image",
+      },
+    ],
+  },
 };
 
 export const viewport: Viewport = {
@@ -20,7 +32,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="pt-BR">
       <body className={`bg-background text-foreground font-sans antialiased`}>
         <div className="flex flex-col gap-12 min-h-screen text-gray-200">
           <Header />

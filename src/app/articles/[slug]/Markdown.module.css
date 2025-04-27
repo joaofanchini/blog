@@ -6,7 +6,7 @@
   margin-right: auto;
 }
 
-.proseContainer p,
+.proseContainer p:not(:first-of-type),
 .proseContainer h3,
 .proseContainer h4,
 .proseContainer ul,
