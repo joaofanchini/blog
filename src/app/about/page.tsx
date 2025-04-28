@@ -29,7 +29,7 @@ export default async function AboutPage() {
           />
           <Tag
             label="Strava"
-            href="https://www.strava.com/athletes/65725122"
+            href="https://strava.app.link/B3gGaO4mVSb"
             bgColorClass="bg-orange-500 hover:bg-orange-600 text-white"
             icon={<FaStrava className="inline" />}
           />
