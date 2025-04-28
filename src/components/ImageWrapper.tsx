@@ -3,6 +3,7 @@ import Image from "next/image";
 interface ImageWrapper {
   src: string;
   alt: string;
+  className?: string;
 }
 
 export default function ImageWrapper(props: ImageWrapper) {
@@ -16,6 +17,7 @@ export default function ImageWrapper(props: ImageWrapper) {
           width={0}
           height={0}
           objectFit="contain"
+          className={props.className}
         />
       </div>
     </div>
