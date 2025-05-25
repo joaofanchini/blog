@@ -14,7 +14,7 @@ export default function ImageWrapper(props: ImageWrapper) {
   const [loading, setLoading] = useState(true);
 
   return (
-    <>
+    <div className="flex w-full justify-center">
       <div className="relative max-w-md w-full h-xl">
         <ImageSkeleton isLoading={loading} className={props.className} />
         <div className="flex justify-center">
@@ -26,13 +26,13 @@ export default function ImageWrapper(props: ImageWrapper) {
             height={400}
             objectFit="contain"
             className={`${props.className} rounded ${
-              !!loading ? 'none' : 'block'
+              !!loading ? "none" : "block"
             }`}
             onLoad={() => setLoading(false)}
             onError={() => setLoading(false)}
           />
         </div>
       </div>
-    </>
+    </div>
   );
 }
