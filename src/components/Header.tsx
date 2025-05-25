@@ -33,7 +33,7 @@ export function Header() {
               style={{ display: "inline-block" }}
             />
             <span className="text-xl font  bg-clip-text text-cyan-600">
-              Echoes of{" "}
+              Echoes from the{" "}
               <span className="text-2xl font-bold  bg-clip-text text-cyan-600 ">
                 Journey
               </span>

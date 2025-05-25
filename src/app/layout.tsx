@@ -7,10 +7,10 @@ import { Header } from "@/components/Header";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Echoes of Journey",
+  title: "Echoes from the Journey",
   description: "A Blog about IT, Software Development, and Life",
   openGraph: {
-    title: "Echoes of Journey",
+    title: "Echoes from the Journey",
     description: "A Blog about IT, Software Development, and Life",
     images: [
       {
