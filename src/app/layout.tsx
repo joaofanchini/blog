@@ -33,10 +33,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body className={`bg-background text-foreground font-sans antialiased flex flex-col gap-10 min-h-screen text-gray-200`}>
-          <Header />
-          <div className="px-4 max-w-3xl mx-auto">{children}</div>
-          <Footer />
+      <body
+        className={`bg-background text-foreground font-sans antialiased flex flex-col gap-10 min-h-screen text-gray-200`}
+      >
+        <Header />
+        <div className="px-4 max-w-3xl mx-auto">{children}</div>
+        <Footer />
       </body>
     </html>
   );
