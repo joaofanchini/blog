@@ -40,12 +40,13 @@ export default async function AboutPage() {
             construídas.
           </p>
           <p className="text">
-            Mais experiênte em desenvolvimento backend, arquiteturas escaláveis
-            e microsserviços, mas faço de tudo.
+            Experiente em desenvolvimento backend, arquiteturas escaláveis
+            e microsserviços, mas faço de tudo!!!
           </p>
           <p className="text">
             Apaixonado por corrida e esportes de endurance.
           </p>
+          <p className="text">Cristão em todas as áreas da vida.</p>
         </section>
       </div>
     </div>
