@@ -1,5 +1,5 @@
 import ArticleCard from "@/components/ArticleCard";
-import { getAllArticles } from "@/functions/ArticleUtils2";
+import { getAllArticles } from "@/functions/ArticleUtils";
 
 export default async function Home() {
   const articles = getAllArticles();

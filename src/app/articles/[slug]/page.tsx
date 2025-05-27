@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import { Metadata } from "next";
 
-import { ArticleFile, getArticleBySlug } from "@/functions/ArticleUtils2";
+import { ArticleFile, getArticleBySlug } from "@/functions/ArticleUtils";
 import styles from "./Markdown.module.css";
 import ImageWrapper from "@/components/ImageWrapper";
 import { formatDate } from "@/functions/DateUtils";
