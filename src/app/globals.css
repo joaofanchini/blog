@@ -8,9 +8,36 @@
   --color-secondary: #7dd3fc;
   --color-accent: #a5f3fc;
   --color-highlight: #93c5fd;
+
+  --color-background-dark: #404040;
+  --color-foreground-dark: #9fabbd;
 }
 
 body {
   background-color: var(--color-background);
   color: var(--color-foreground);
+}
+
+/* Scrollbar horizontal e vertical */
+::-webkit-scrollbar {
+  width: 0.5rem;
+  height: 0.25rem;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--color-background);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-foreground);
+}
+
+@media (prefers-color-scheme: dark) {
+  ::-webkit-scrollbar-track {
+    background-color: var(--color-background-dark);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--color-foreground-dark);
+  }
 }

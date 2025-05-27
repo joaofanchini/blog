@@ -10,7 +10,7 @@
 .proseContainer h3,
 .proseContainer h4,
 .proseContainer ul,
-.proseContainer ol{
+.proseContainer ol {
   margin-top: 2rem;
 }
 
@@ -95,7 +95,7 @@
 
 /* Código inline */
 .proseContainer code {
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Courier New", Courier, monospace;
   font-size: 0.875rem; /* text-sm */
   background-color: #2d3748; /* bg-gray-100 - fundo claro */
   color: #f7fafc; /* text-gray-800 - cor escura para texto de código */
@@ -113,7 +113,6 @@
 
 .proseContainer pre code {
   display: block;
-  font-family: 'Courier New', Courier, monospace;
   font-size: 0.875rem;
   color: #f7fafc;
   white-space: pre;
