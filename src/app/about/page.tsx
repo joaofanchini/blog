@@ -2,6 +2,33 @@ import ImageWrapper from "@/components/ImageWrapper";
 import Tag from "@/components/Tag";
 import { FaLinkedin, FaGithub, FaStrava } from "react-icons/fa6";
 import { getProfile } from "@/services/Github.service";
+import { Metadata } from "next";
+
+export async function generateMetadata(): Promise<Metadata> {
+  const { avatarUrl } = await getProfile();
+  return {
+    title: {
+      template: `%s | Sobre mim`,
+      default: "Sobre mim",
+    },
+    description: "Um pouco sobre mim",
+    openGraph: {
+      type: "profile",
+      url: `https://echoesfromthejourney.com/about`,
+      title: "Sobre mim",
+      description: "Um pouco sobre mim",
+      images: [
+        {
+          url: avatarUrl,
+          alt: "Avatar de perfil",
+        },
+      ],
+      firstName: "João",
+      lastName: "Fanchini",
+      gender: "male",
+    },
+  };
+}
 
 export default async function AboutPage() {
   const { avatarUrl } = await getProfile();
@@ -40,8 +67,8 @@ export default async function AboutPage() {
             construídas.
           </p>
           <p className="text">
-            Experiente em desenvolvimento backend, arquiteturas escaláveis
-            e microsserviços, mas faço de tudo!!!
+            Experiente em desenvolvimento backend, arquiteturas escaláveis e
+            microsserviços, mas faço de tudo!!!
           </p>
           <p className="text">
             Apaixonado por corrida e esportes de endurance.
