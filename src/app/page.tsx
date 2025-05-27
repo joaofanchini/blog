@@ -1,5 +1,5 @@
 import ArticleCard from "@/components/ArticleCard";
-import { getAllArticles } from "@/functions/articleUtils";
+import { getAllArticles } from "@/functions/ArticleUtils";
 
 export default async function Home() {
   const articles = getAllArticles();
@@ -26,6 +26,7 @@ export default async function Home() {
               imageSrc={article.imageSrc}
               imageAlt={article.imageAlt}
               description={article.preview}
+              date={article.date}
             />
           );
         })}

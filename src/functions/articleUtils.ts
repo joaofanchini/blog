@@ -13,7 +13,9 @@ export interface ArticleFile {
   imageSrc: string;
   imageAlt: string;
   preview: string;
+  content: string;
   formattedContent: string;
+  date: Date;
   data: { [key: string]: unknown };
 }
 
@@ -34,7 +36,9 @@ export function getAllArticles(): ArticleFile[] {
         imageSrc: data.imageSrc,
         imageAlt: data.imageAlt,
         preview: data.preview,
+        content: content,
         formattedContent: md.render(content),
+        date: new Date(data.date),
         data,
       };
     })
