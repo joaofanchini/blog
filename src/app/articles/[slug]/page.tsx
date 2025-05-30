@@ -12,6 +12,7 @@ import { formatDate } from "@/functions/DateUtils";
 
 import styles from "./Markdown.module.css";
 import "prismjs/themes/prism-tomorrow.css";
+import ProgressBar from "@/components/ProgressBar";
 
 interface ArticleParams {
   slug: string;
@@ -82,6 +83,8 @@ export default async function PageArticle({ params }: ArticleParamsWrapper) {
 
   return (
     <div className="flex flex-col mx-auto gap-6">
+      <ProgressBar />
+
       <h1 className="text-3xl font-bold leading-tight">{article.title}</h1>
       <div className="flex justify-start w-full gap-2 items-center text-gray-500 text-xs">
         <p>{predictReadTimeInMinutes(article.content)} min de leitura</p>
