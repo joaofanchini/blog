@@ -19,11 +19,11 @@ export default function ArticleCard(props: ArticleCardProps) {
 
   return (
     <Link href={`/articles/${articleId}`}>
-      <div className="flex flex-col p-4 items-center gap-2 bg-gray-800 rounded-xl hover:bg-gray-700 transition-colors w-auto">
+      <div className="flex flex-col justify-between p-4 items-center gap-2 bg-gray-800 rounded-xl hover:bg-gray-700 transition-colors w-auto h-full">
         <ImageWrapper src={props.imageSrc} alt={props.imageAlt} />
         <h2 className="text-lg font-semibold text-cyan-300">{props.title}</h2>
         <p className="text-sm text-gray-400">{props.description}</p>
-        <div className="flex justify-end w-full  text-gray-500 text-xs">
+        <div className="flex justify-end w-full text-gray-500 text-xs">
           <p>{formatDate(props.date)}</p>
         </div>
         {tagsCount > 0 && (
