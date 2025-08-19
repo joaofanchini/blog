@@ -1,4 +1,5 @@
 import ArticleCard from "@/components/ArticleCard";
+import Banner from "@/components/Banner";
 import { getAllArticles } from "@/functions/ArticleUtils";
 
 export default async function Home() {
@@ -15,6 +16,7 @@ export default async function Home() {
           <Tag label="java" />
         </div>
       </section> */}
+      <Banner />
       <main className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {articles.map((article) => {
           return (
