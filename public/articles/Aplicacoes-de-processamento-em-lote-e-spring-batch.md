@@ -6,6 +6,11 @@ preview: "Os conceitos de processamento em lote e como podem ser aplicados com o
 imageSrc: "https://drive.google.com/thumbnail?sz=w640&id=1YT3R8um1jLchnkJ-Mb7FAlwAC6DWiKN4"
 imageAlt: "Banner sobre Spring Batch"
 show: true
+references:
+  - Spring Batch Docs - https://docs.spring.io/spring-batch/docs/current/reference/html/
+  - Enterprise Integration Patterns – Gregor Hohpe, Bobby Woolf
+  - Designing Data-Intensive Applications - Martin Kleppmann
+  - Spunk Article - https://www.splunk.com/en_us/blog/learn/batch-processing.html
 ---
 
 # Contextualização

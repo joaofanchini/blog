@@ -98,6 +98,20 @@ export default async function PageArticle({ params }: ArticleParamsWrapper) {
           __html: highlightCodeBlocks(article.formattedContent),
         }}
       ></div>
+      <div className="flex flex-col mt-3">
+        {article.references.length > 0 && (
+          <h2 className="text-3xl font-bold text-white mb-4 flex items-center gap-2">
+            <span>📚</span> Referências
+          </h2>
+        )}
+        <div className="flex flex-col gap-3 border-l-2 border-gray-600 pl-4">
+          {article.references.map((reference, index) => (
+            <p key={index} className="text-gray-300 text-sm leading-relaxed">
+              {reference}
+            </p>
+          ))}
+        </div>
+      </div>
     </div>
   );
 }

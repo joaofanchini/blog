@@ -6,9 +6,14 @@ preview: "Entenda os princípios ISP e DIP do SOLID para melhorar a modularidade
 imageSrc: "https://drive.google.com/thumbnail?sz=w640&id=1x9aquxqpPkK2wIoGGayboHm1XN-dhcno"
 imageAlt: "Principíos do SOLID: ISP e DIP"
 show: true
+references:
+  - Desenvolvimento real de software - Raoul-Gabriel Urma & Richard Warbuton
+  - Arquitetura limpa - Robert C. Martin
 ---
+
 Ainda falando sobre SOLID, os outros dois princípios são:
 **Interface Segregation Principles** e **Dependency Inversion Principle**
+
 ---
 
 ## Interface Segregation Principle (ISP)
@@ -25,8 +30,8 @@ Quando o ISP é violado, isso representa uma **boa oportunidade para dividir int
 
 > 💡 **Lembre-se**: tanto a herança quanto a implementação de interfaces devem ocorrer com base em **comportamentos e contratos necessários**, e não apenas por similaridade na implementação.
 
-
 ### Exemplo de violação:
+
 ```java
 interface Automovel{
 	void abastecer();
@@ -38,7 +43,7 @@ class Moto implements Automovel {
 	public void abastecer(){
 		// return...
 	}
-	
+
 	@Override
 	public void guiar(){
 		// return...
@@ -50,15 +55,18 @@ class Carroca implements Automovel {
 	public void abastecer() {
 		throw new UnsuportedOperationException();
 	}
-	
+
 	@Override
 	public void guiar() {
 		// return...
 	}
 }
 ```
-No exemplo acima,  a classe Carroça não poderia implementar o método abastecer, pois ele não faz sentido para esta representação. O que se poderia fazer então, neste caso, para corrigir essa violação do ISP seria:
+
+No exemplo acima, a classe Carroça não poderia implementar o método abastecer, pois ele não faz sentido para esta representação. O que se poderia fazer então, neste caso, para corrigir essa violação do ISP seria:
+
 ### Exemplo de segregação:
+
 ```java
 interface Guiavel {
 	void guiar();
@@ -73,7 +81,7 @@ class Moto implements Guiavel, Abastecivel {
 	void abastecer(){
 		// return...
 	}
-	
+
 	@Override
 	void guiar(){
 		// return...
@@ -86,11 +94,13 @@ class Carroca implements Guiavel {
 	}
 }
 ```
+
 Agora as interfaces estão mais próximas do domínio. O ISP consiste em modelar contratos mais específicos e relevantes para cada entidade.
 
 > Lembrar que domínio se refere a ao conjunto de objetos relacionados ao negócio. Já entidade é a representação de cada objeto de valor.
 
 ---
+
 ## Dependency Inversion Principle (DIP)
 
 O **Princípio da Inversão de Dependência** tem como objetivo tornar o código mais manutenível e testável. Ele é bastante conhecido, principalmente por causa do uso intensivo de **Injeção de Dependência** em frameworks modernos, o que é uma boa prática.
@@ -98,6 +108,7 @@ O **Princípio da Inversão de Dependência** tem como objetivo tornar o código
 Basicamente, o DIP recomenda que módulos de alto nível **não dependam de módulos de baixo nível**, mas sim que ambos dependam de abstrações (interfaces ou classes abstratas). Isso reduz o acoplamento, pois cada classe externaliza suas dependências.
 
 ### Exemplo simples com Injeção de Dependência:
+
 ```java
 interface Validador {
     void validar();
@@ -105,7 +116,7 @@ interface Validador {
 
 class Processador {
     private final Validador validador;
-    
+
     public Processador(Validador validador) {
         this.validador = validador;
     }
@@ -120,6 +131,7 @@ class Processador {
 Nesse exemplo, o `Processador` recebe a dependência `Validador` externamente, o que permite, por exemplo, injetar mocks em testes e facilita a reutilização do código.
 
 ### Exemplo de teste utilizando Mockito:
+
 ```java
 public class ProcessadorTest {
 
@@ -144,9 +156,11 @@ public class ProcessadorTest {
     }
 }
 ```
+
 > Embora a Injeção de Dependência seja a forma mais comum de aplicar o DIP, não é a única. Veja outro exemplo abaixo, utilizando um factory com Supplier:
 
 ### Exemplo alternativo usando Factory:
+
 ```java
 // Classe de domínio
 class Automovel {
@@ -191,4 +205,5 @@ public class Main {
     }
 }
 ```
+
 Nesse segundo exemplo, o DIP também está sendo respeitado, mas em vez de usar injeção direta, usamos uma Factory para fornecer a dependência, mantendo o baixo acoplamento.

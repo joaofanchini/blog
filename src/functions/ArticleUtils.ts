@@ -17,6 +17,7 @@ export interface ArticleFile {
   formattedContent: string;
   date: Date;
   data: { [key: string]: unknown };
+  references: string[];
 }
 
 export function getAllArticles(): ArticleFile[] {
@@ -40,6 +41,7 @@ export function getAllArticles(): ArticleFile[] {
         formattedContent: md.render(content),
         date: new Date(data.date),
         data,
+        references: data.references || [],
       };
     })
     .filter((article) => !!article.show);

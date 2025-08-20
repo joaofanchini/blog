@@ -6,6 +6,9 @@ preview: "Descubra os 3 primeiros princípios do SOLID e por que eles são funda
 imageSrc: "https://drive.google.com/thumbnail?sz=w640&id=1A-G_S9Jn4jz5ihnmHc3MhvNXVMPAYTJu"
 imageAlt: "Principíos do SOLID"
 show: true
+references:
+  - Desenvolvimento real de software - Raoul-Gabriel Urma & Richard Warbuton
+  - Arquitetura limpa - Robert C. Martin
 ---
 
 **SOLID** é um conjunto de princípios bastante conhecido no mundo da **programação orientada a objetos**. Apesar de ser requisito em muitas vagas por aí, muita gente ainda sente dificuldade em definir – e, principalmente, **aplicar** – esses princípios no dia a dia do desenvolvimento.
